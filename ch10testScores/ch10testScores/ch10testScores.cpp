@@ -29,11 +29,17 @@ int main()
 // get 6 test scores from user
 void getTestScores(double testScores[], double size)
 {
+	//input validation
 	for (int i = 0; i < size; i++)
 	{
 		cout << "Test score " << i + 1 << ": ";
 		cin >> testScores[i];
-	}
+		while (testScores[i] < 0 || testScores[i] > 100)
+		{
+			cout << "Invalid test score. Enter a test score between 0 and 100: ";
+			cin >> testScores[i];
+		} // end while loop
+	} // end for loop
 } // end getTestScores
 
 // calculate average of test scores
